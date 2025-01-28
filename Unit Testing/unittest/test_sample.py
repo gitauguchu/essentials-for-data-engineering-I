@@ -58,4 +58,5 @@ class TestSample(unittest.TestCase):
             self.checker.div(self.a1, self.b2)
             
 if __name__ == "__main__":
+    """This method ensures that all tests run when the unit test is called to run"""
     unittest.main()
