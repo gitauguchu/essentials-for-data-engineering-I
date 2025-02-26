@@ -9,7 +9,7 @@ def add_exclamation(func):
 def greet(name):
     return 'Hello' + ' ' + name
 
-print(greet('Tom'))
+print(greet('Tom')) #Prints "Hello Tom!"
 
 
 #Advance decorators with two inner functions
@@ -24,13 +24,13 @@ def add_symbol(symbol):
 def greet(name):
     return 'Hello' + ' ' + name
 
-print(greet('Tom'))
+print(greet('Tom')) #Prints "Hello Tom!"
 
 @add_symbol('??')
 def greet(name):
     return 'Hello' + ' ' + name
 
-print(greet('Tom'))
+print(greet('Tom')) #Prints "Hello Tom??"
 
 
 #Using classes as decorators
@@ -48,7 +48,7 @@ class add_symbol:
 def greet(name):
     return 'Hello' + ' ' + name
 
-print(greet('Tom'))
+print(greet('Tom')) #Prints "Hello Tom!"
 
 #Using functools.wraps to preserve the function's metadata
 from functools import wraps
@@ -64,9 +64,9 @@ def greet(name):
     """Greets someone"""
     return 'Hello' + ' ' + name
 
-print(greet('Tom'))
-print(greet.__name__)
-print(greet.__doc__)
+print(greet('Tom')) #Prints "Hello Tom !"
+print(greet.__name__) #Prints "greet"
+print(greet.__doc__) #Prints "Greets someone"
 
 
 #Using __wrapped__ to undecorate
@@ -85,8 +85,8 @@ def greet(name):
     """Greets someone"""
     return 'Hello' + ' ' + name
 
-print(greet('Tom'))
-print(greet.__wrapped__('Tom'))
+print(greet('Tom')) #Prints "Hello Tom !"
+print(greet.__wrapped__('Tom')) #Prints "Hello Tom"
 
 
 #Decorators to decorate classes
@@ -101,5 +101,5 @@ class Dog: pass
 @add_hello
 class Cat: pass
 
-Dog().hello()
-Cat().hello()
+Dog().hello() #Prints "Hello"
+Cat().hello() #Prints "Hello"
